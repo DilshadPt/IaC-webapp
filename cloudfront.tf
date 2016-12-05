@@ -27,8 +27,8 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
       }
     }
     min_ttl = "0"
-    default_ttl = "300" //3600
-    max_ttl = "1200" //86400
+    default_ttl = "0" //3600
+    max_ttl = "0" //86400
     target_origin_id = "origin-bucket-${aws_s3_bucket.website_bucket.id}"
     viewer_protocol_policy = "${var.protocol_policy}"
   }
